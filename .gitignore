@@ -1,1 +1,39 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
 .env
+
+# TypeScript build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Lock files (optional, depending on workflow)
+package-lock.json
+yarn.lock
+
+# Debugging
+*.log
+*.pid
+*.seed
+*.cache
+
+# npm global modules (if applicable)
+.npm/
+
+# Misc
+.idea/       # JetBrains IDEs (WebStorm, IntelliJ, etc.)
+*.swp        # Vim swap files
+*.swo        # Vim swap files
