@@ -7,4 +7,4 @@
 4. First `cd raydium-swap-ts` , then `cd src` to move into the project directory
 5. ts-node main.ts to run this project, make sure you put your phantom wallet private key and Quicknode RPC endpoint in .env
 
-# Keep your secret key safe! NEVER SHARE YOUR SECRET KEY TO ANYONE!
+# NEVER SHARE YOUR SECRET KEY WITH ANYONE!
