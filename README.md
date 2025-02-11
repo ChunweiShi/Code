@@ -5,4 +5,6 @@
 2. `git clone https://github.com/ChunweiShi/Code.git`
 3. Copy the content in install-dependencies.txt and paste it into your terminal to set up environment
 4. First `cd raydium-swap-ts` , then `cd src` to move into the project directory
-5. ts-node main.ts to run this project
+5. ts-node main.ts to run this project, make sure you put your phantom wallet private key and Quicknode RPC endpoint in .env
+
+# Keep your secret key safe! NEVER SHARE YOUR SECRET KEY TO ANYONE!
