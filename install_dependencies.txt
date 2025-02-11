@@ -1,0 +1,9 @@
+curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/solana-developers/solana-install/main/install.sh | bash
+
+npm i dotenv 
+npm install typescript --save-dev
+npm install --save-dev @types/node
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install git
