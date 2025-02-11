@@ -3,6 +3,8 @@ curl --proto '=https' --tlsv1.2 -sSfL https://raw.githubusercontent.com/solana-d
 npm i dotenv 
 npm install typescript --save-dev
 npm install --save-dev @types/node
+npm install -g typescript
+npm install -g ts-node
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
