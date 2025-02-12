@@ -10,6 +10,8 @@ npm install @raydium-io/raydium-sdk
 npm install --save-dev @types/node
 npm install -g ts-node
 npm install @project-serum/anchor bs58
+npm install @raydium-io/raydium-sdk-v2
+npm i @meteora-ag/dlmm @coral-xyz/anchor
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
