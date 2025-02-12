@@ -5,6 +5,11 @@ npm install typescript --save-dev
 npm install --save-dev @types/node
 npm install -g typescript
 npm install -g ts-node
+npm install --save @solana/web3.js@1
+npm install @raydium-io/raydium-sdk
+npm install --save-dev @types/node
+npm install -g ts-node
+npm install @project-serum/anchor bs58
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

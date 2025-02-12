@@ -77,12 +77,13 @@ async function fetchPriorityFee(): Promise<number> {
         throw new Error('Unexpected response format from priority fee API')
     }
 
-    const extremePriorityFee = data.result.per_transaction.extreme
-    const highPriorityFee = data.result.per_transaction.high
-    const mediumPriorityFee = data.result.per_transaction.medium
-    const lowPriorityFee = data.result.per_transaction.low
+    const extremePriorityFee = data.result.per_transaction.extreme ?? 0
+    const highPriorityFee = data.result.per_transaction.high ?? 0
+    const mediumPriorityFee = data.result.per_transaction.medium ?? 0
+    const lowPriorityFee = data.result.per_transaction.low ?? 0
+    const test = data.result.per_compute_unit.low
 
-    const currentFee = mediumPriorityFee
+    const currentFee = test
 
     const priorityFeeInSOL = currentFee / 1e15
 
@@ -106,17 +107,29 @@ function isPriorityFeeResponse(data: unknown): data is PriorityFeeResponse {
         'high' in data.result.per_compute_unit &&
         'medium' in data.result.per_compute_unit &&
         'low' in data.result.per_compute_unit &&
-        'extreme' in data.result.per_transaction &&
+        /*'extreme' in data.result.per_transaction &&
         'high' in data.result.per_transaction &&
         'medium' in data.result.per_transaction &&
-        'low' in data.result.per_transaction &&
+        'low' in data.result.per_transaction &&*/
         typeof data.result.per_compute_unit.extreme === 'number' &&
         typeof data.result.per_compute_unit.high === 'number' &&
         typeof data.result.per_compute_unit.medium === 'number' &&
-        typeof data.result.per_compute_unit.low === 'number' &&
+        typeof data.result.per_compute_unit.low === 'number' /*&&
         typeof data.result.per_transaction.extreme === 'number' &&
         typeof data.result.per_transaction.high === 'number' &&
         typeof data.result.per_transaction.medium === 'number' &&
-        typeof data.result.per_transaction.low === 'number'
+        typeof data.result.per_transaction.low === 'number'*/
     )
+}
+
+export const CONFIG = {
+    RPC_URL: process.env.QUICKNODE_URL,
+    WALLET_SECRET_KEY: process.env.WALLET_SECRET_KEY,
+    BASE_MINT: 'So11111111111111111111111111111111111111112',
+    QUOTE_MINT: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263',
+    TOKEN_A_AMOUNT: 0.0001,
+    EXECUTE_SWAP: true,
+    USE_VERSIONED_TRANSACTION: true,
+    SLIPPAGE: 5,
+    getPriorityFee: fetchPriorityFee,
 }
