@@ -12,7 +12,6 @@ if (!process.env.WALLET_SECRET_KEY) {
 
 interface PriorityFeeResponse {
     jsonrpc: string,
-    //Quicknode api returns the result object
     result: {
         per_compute_unit: {
             extreme: number,
@@ -31,9 +30,7 @@ interface PriorityFeeResponse {
 }
 
 function httpsRequest(url: string, options: https.RequestOptions, data: string): Promise<string> {
-    //Returns a Promise object which will resolve to a string eventually
     return new Promise((resolve, reject) => {
-        //builds req using parameters given in the function, res represents the data received from server
         const req = https.request(url, options, (res) => {
             let body = ''
             res.on('data', (chunk) => body += chunk.toString())
@@ -86,11 +83,11 @@ async function fetchPriorityFee(): Promise<number> {
     const lowPriorityFee = data.result.per_transaction.low ?? 0
     const test = data.result.per_compute_unit.low
 
-    const currentFee = test
+    const currentFee = lowPriorityFee
 
     const priorityFeeInSOL = currentFee / 1e15
 
-    return Math.max(priorityFeeInSOL, 0.000001)
+    return Math.max(priorityFeeInSOL, 0.0000001)
 }
 
 function isPriorityFeeResponse(data: unknown): data is PriorityFeeResponse {

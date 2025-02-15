@@ -12,6 +12,7 @@ npm install -g ts-node
 npm install @project-serum/anchor bs58
 npm install @raydium-io/raydium-sdk-v2
 npm i @meteora-ag/dlmm @coral-xyz/anchor
+npm i @quicknode/sdk
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

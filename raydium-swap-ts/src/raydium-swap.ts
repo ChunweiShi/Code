@@ -97,4 +97,20 @@ export class RaydiumSwap {
         )
         return poolData ? jsonInfo2PoolKeys(poolData) as LiquidityPoolKeys : null
     }
+
+    async getProgramAccounts(baseMint: string, quoteMint: string): Promise<GetProgramAccountsResponse> {
+        const layout = LIQUIDITY_STATE_LAYOUT_V4;
+        return this.connection.getProgramAccounts(new PublicKey(RaydiumSwap.RAYDIUM_V4_PROGRAM_ID)),{
+            //filter is a method that belongs to getProgramAccounts, it is NOT a built-in typescript method
+            filters: [
+                {dataSize: layout.span},
+                {
+                    memCmp: {
+                        offset: layout.offsetOf('basemint')
+                        bytes: layout.
+                    },
+                }
+            ]
+        }
+    }
 }
