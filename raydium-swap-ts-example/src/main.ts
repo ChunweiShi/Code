@@ -59,6 +59,12 @@ async function swap() {
           throw new Error('Expected a VersionedTransaction but received a different type');
         }
         const latestBlockhash = await raydiumSwap.connection.getLatestBlockhash();
+        console.log('🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢')
+        console.log('🟢 Debugging Info:');
+        console.log('swapTx:', swapTx);
+        console.log('latestBlockhash.blockhash:', latestBlockhash.blockhash);
+        console.log('latestBlockhash.lastValidBlockHeight:', latestBlockhash.lastValidBlockHeight);
+        console.log('🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢')
         txid = await raydiumSwap.sendVersionedTransaction(
           swapTx,
           latestBlockhash.blockhash,
